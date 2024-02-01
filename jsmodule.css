@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root{
+    --text-color:#ffffff;
+    --background-color: #8CC461;
+    --rulebook-color:#004429;
+    --rock-color:#0074B6;
+    --paper-color:#FFA943;
+    --scissors-color:#BD00FF;
+    --scoreText-color:#656565;
+    --scoreNo-color:black;
+    --scoreBackgroung-color:white;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: opacity 0.3s ease-in-out;
+    font-family: 'Roboto', sans-serif;   
+}
+body{
+    background-color:var(--background-color);
+    color: var(--text-color);
+    padding-top:8vh ;
+}
+
+
+.header{ 
+    width: 60%;
+    height: 23vh;
+    margin: 0 auto;
+    border: 3px solid white;
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.headleft{
+    display: flex;
+    flex-direction:column ;
+    font-size:2.5rem;
+    font-weight: 600;
+    line-height: 2.8rem;
+    letter-spacing: 0.1em;
+    text-align: left;
+}
+.score{
+    width:35%;
+    height:100%;
+    display:flex;
+    justify-content: space-between;
+}
+.pcSection , .userSection {
+    width: 45%;
+    height: 100%;
+    padding: .5rem;
+    background-color: var(--text-color);
+    border-radius: 9px;
+    color: var(--scoreText-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.3rem;
+    line-height:1.5rem;
+    letter-spacing: 0.03em;
+    font-weight: 600;
+}
+.pcScore , .userScore {
+    color:var(--scoreNo-color);
+    font-size: 4.5rem;
+    line-height: 5rem;
+    font-weight: 700;
+}
+
+
+.gameArea{
+    width: 33%;
+    height: 60vh;
+    margin: 0 auto;
+    padding-top:10vh;
+    position: relative;
+    display: grid;
+    grid-template-columns: (repeat(2,1fr));
+    grid-template-areas: 
+    "rock scissor"
+    "paper paper";
+    place-items: center;   
+}
+.choice-btn{
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+.choice{
+    position:relative;
+    width:7rem;
+    height:7rem;
+    background-color: white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+.choice::before{
+    content: "";
+    position:absolute;
+    width: 130%;
+    height: 130%;
+    top:-15%;
+    left:-15%;
+    border-radius: 50%;
+    z-index: -1;
+    outline:0; 
+}
+.choice.rock::before{
+    background-color: var(--rock-color);
+}
+.choice.paper::before{
+    background-color: var(--paper-color);
+}
+.choice.scissors::before{
+    background-color: var(--scissors-color);
+}
+#rock{
+    grid-area: rock;
+}
+#scissors{
+    grid-area: scissor;
+}
+#paper{
+    grid-area: paper;
+}
+.connection{
+    width:50%;  
+    height: 55%;
+    position:absolute;
+    top:33%;
+    left:25%;
+    z-index: -1;
+}
+
+
+.result{
+    margin: 0 auto;
+    padding:6rem;
+    width: 60%;
+    height: 60vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+}
+.pc-title , .your-title{
+    font-size: 1.2rem;
+    text-align: center;
+}
+.outcome{
+    padding-top: 4rem;
+    align-items: center;
+}
+.result-mid{
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.who-wins{
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: 0.05rem;
+    padding-top: 9rem ;
+}
+.against-pc{
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    padding-top: 0.5rem ;  
+}
+.replay-btn{
+    margin-top: 3rem;
+    width: 90%;
+    height:30%;
+    background-color: white;
+    color: #6B6B6B;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem;
+    border: none;
+    border-radius: 9px;   
+}
+
+
+.pulse{
+    margin: auto;
+}
+.pulse:before,
+.pulse:after{
+    content: "";
+    position: absolute;
+    top: 59%;
+    height: 7rem;
+    width: 7rem;
+    background-color: #23821a63;
+    border-radius: 50%;
+    z-index: -2;
+    opacity: 1;
+}
+.pulse:before{
+    animation: pulse 1s ease-out infinite;
+}
+.pulse:after{
+    animation: pulse 2s 1s ease-out infinite;
+}
+@keyframes pulse{
+    100%{
+        transform: scale(2.5);
+        opacity:0;
+    }
+}
+
+
+.rule-btn{
+    width: 10%;
+    font-size: 1.6rem;
+    font-weight: 600;
+    background: none;
+    padding: .5rem 1.5rem;
+    letter-spacing: 0.08em;
+    border: 2px solid white;
+    color: var(--text-color);
+    border-radius:10px;
+    position:fixed;
+    right: 2%;
+    bottom: 3%;
+    cursor: pointer;
+}
+.ruleBook{
+    border: 7px solid white;
+    border-radius: 13px;
+    background-color:var(--rulebook-color);
+    width: 20%;
+    height: 49%;
+    position: fixed;
+    right: 4%;
+    bottom: 12%;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+.show-rulebook{
+    opacity: 0;
+    pointer-events: initial;
+}
+.ruleBook h3{
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 1.5rem;    
+}
+ul{
+    padding: 0 .5rem 1.5rem 2rem;
+}
+ul li{
+    list-style-image:url(/img/Rectangle\ 5.png);
+    margin-bottom: 8px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.close-btn{
+    margin: 0;
+    height: 3.2rem;
+    width: 3.2rem;
+    border: 7px solid white;
+    border-radius: 50%;
+    background-color: red;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 600;   
+    position:absolute;
+    right: -10%;
+    top: -9%; 
+    cursor: pointer;
+}
+.next-btn{
+    width: 10%;
+    font-size: 1.6rem;
+    font-weight: 600;
+    background: none;
+    padding: .5rem 1.5rem;
+    letter-spacing: 0.08em;
+    border: 2px solid white;
+    color: var(--text-color);
+    border-radius:10px;
+    position:fixed;
+    right: 14%;
+    bottom: 3%;
+    cursor: pointer;
+    display: none;
+}
+
+
+.celebration{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.celebration > .trophy{
+    position: absolute;
+    top: 22%;
+}
+.celebration > .playagain-btn{
+    margin-top: 3rem;
+    width: 13%;
+    height:25%;
+    background-color: white;
+    color: #6B6B6B;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem;
+    border: none;
+    border-radius: 9px;
+}
+.celebration > h1{
+    padding-top: 4rem;
+    font-size: 5rem;
+    font-weight: 600;
+    letter-spacing: 0.4rem;
+    align-self: center;
+}
+.celebration > h3{
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    align-self: center;
+}

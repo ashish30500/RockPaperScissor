@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FirstGame</title>
+    <link rel="stylesheet" href="jsmodule.css">
+</head>
+<body>
+
+    <header class="header">
+            <div class="headleft">
+                <div>ROCK</div>
+                <div>PAPER</div>
+                <div>SCISSORS</div>
+            </div>
+        <div class="score">
+            <div class="pcSection">
+                <div>COMPUTER</div>
+                <div>SCORE</div>
+                <div class="pcScore">0</div>
+            </div>    
+            <div class="userSection">
+                <div>YOUR</div>
+                <div>SCORE</div>
+                <div class="userScore">0</div>
+            </div> 
+        </div>
+    </header>
+
+    <section class="gameArea">
+        <img class="connection" src="./img/triangle2.svg" alt="triangle">
+   
+        <button class="choice-btn " id="rock">
+            <div class="choice rock">
+                <img src="./img/rock.png" alt="rock">
+            </div>
+        </button>
+        <button class="choice-btn " id="scissors">
+            <div class="choice scissors">
+                <img src="./img/scissors.png" alt="scissors">
+            </div>
+        </button>
+        <button class="choice-btn " id="paper">
+            <div class="choice paper">
+                <img src="./img/paper.png" alt="paper">
+            </div>
+        </button>
+    </section>
+
+    <section class="result">
+        <div class="result-left">
+            <h2 class="your-title ">YOU PICKED</h2>
+            <div class="you-picked outcome "></div>
+        </div>
+        <div class="result-mid">
+            <div class="who-wins">OUTCOME</div>
+            <div class="against-pc">AGAINST PC</div>
+            <button class="replay-btn">REPLAY</button>
+        </div>
+        <div class="result-right">
+            <h2 class="pc-title">PC PICKED</h2>
+            <div class="pc-picked outcome "></div>
+        </div>
+    </section>
+
+    <section class="celebration">
+        <img class="star" src="./img/star.png" alt="star">
+        <img class="trophy" src="./img/trophy.png" alt="trophy">
+        <h1>    HURRAY!!</h1>
+        <h3>YOU WON THE GAME</h3>
+        <button class="playagain-btn">PLAY AGAIN</button>
+    </section>
+
+
+    <button class="rule-btn">RULES</button>
+    <button class="next-btn"> NEXT</button>
+    <div class="ruleBook " tabindex="1">
+        <h3>GAME RULES</h3>
+        <ul>
+            <li> Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+            <li> Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+            <li> Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+            <li> If both players lay down the same hand, each player lays down another hand.</li>
+        </ul>
+        <button class="close-btn">X</button>
+    </div>
+    
+
+    <script src="./module.js"></script> 
+</body>
+</html>
