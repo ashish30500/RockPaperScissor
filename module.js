@@ -22,8 +22,8 @@ const scissors = document.querySelector("#scissors");
 let userChoice;
 let computerChoice;
 
-let userScore = localStorage.getItem("userScore") ;
-let pcScore = localStorage.getItem("pcScore") ;
+let userScore = localStorage.getItem("userScore") || 0;
+let pcScore = localStorage.getItem("pcScore") || 0 ;
 
 const whoWins = document.querySelector(".who-wins");
 const replayBtn= document.querySelector(".replay-btn");

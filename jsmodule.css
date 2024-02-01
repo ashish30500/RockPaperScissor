@@ -205,10 +205,10 @@ body{
     opacity: 1;
 }
 .pulse:before{
-    animation: pulse 1s ease-out infinite;
+    animation: pulse 0.5s ease-out infinite;
 }
 .pulse:after{
-    animation: pulse 2s 1s ease-out infinite;
+    animation: pulse 1s 1s ease-out infinite;
 }
 @keyframes pulse{
     100%{
